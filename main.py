@@ -1,8 +1,5 @@
 #
-
-
 import pandas as pd
-
 
 def series_to_string(series:pd.Series, verbose=False):
     """
@@ -79,7 +76,7 @@ def convert_insilico_generated_mea_datafile_to_dr_cell_dat(source_path_csv:str, 
     i = pd.read_csv(source_path_csv, sep=";", encoding="cp1252", nrows=0)
     meta = list(i.columns.values)
     df = pd.read_csv(source_path_csv, sep=";", encoding="cp1252", skiprows=2)
-    print('Reading .csv finished')
+    print('Reading .csv finished, starting .dat creation ...')
 
     # converting time units from [s] to [ms] and round values
     df.iloc[:,0] = df.iloc[:,0] * 1000
