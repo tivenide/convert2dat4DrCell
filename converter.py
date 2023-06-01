@@ -51,13 +51,13 @@ def convert_insilico_generated_mea_datafile_to_dr_cell_dat(source_path_csv:str, 
 
     return None
 
-def convert_dr_cell_dat_to_dr_cell_dat(source_path_csv:str, target_path_dat:str):
+def convert_dr_cell_dat_to_dr_cell_dat(source_path_dat:str, target_path_dat:str):
     """
         Converts existing .dat file from LabView Software to .dat file,
         which can be imported by Matlab-based DrCell Software. Just for testing reasons.
         Parameters
         ----------
-        source_path_csv : string
+        source_path_dat : string
             Path to .dat file.
         target_path_dat : string
             Path to target .dat file for DrCell Software.
@@ -70,7 +70,7 @@ def convert_dr_cell_dat_to_dr_cell_dat(source_path_csv:str, target_path_dat:str)
     print('Conversion started')
 
     # reading csv
-    df, meta, names_formatted_list, error_var = import_dat_return_data(source_path_csv)
+    df, meta, names_formatted_list, error_var = import_dat_return_data(source_path_dat)
     #i = pd.read_csv(source_path_csv, sep=";", encoding="cp1252", nrows=0)
     #meta = list(i.columns.values)
     #df = pd.read_csv(source_path_csv, sep=";", encoding="cp1252", skiprows=2)
